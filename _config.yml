@@ -22,7 +22,7 @@ blog_button:
 
 # Navigation buttons in the front page.
 nav:
-    - {title: Projects, description: My Projects, url: 'https://github.com/guoshine'}
+    - {title: Projects, description: My Projects, url: 'https://github.com/guoliliang'}
     # - {title: Another Button, description: A button, url: 'http://example.com'}
 
 # Pagination
@@ -38,7 +38,7 @@ comment:
 # Social
 social:
   #  weibo: onevcat
-    github: https://github.com/guoshine
+    github: https://github.com/guoliliang
   #  twitter: onevcat
   #  gplus: 107108267983477358170
     mail: ttgll@163.com
