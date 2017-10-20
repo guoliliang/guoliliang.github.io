@@ -3,3 +3,5 @@ layout: C#
 title: 关于 WOW6432Node
 date: 2017-10-20 16:28:11 +0800
 ---
+
+首先 WOW6432Node 是注册表
