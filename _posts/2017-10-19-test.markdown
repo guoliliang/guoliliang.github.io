@@ -1,7 +1,7 @@
 ---
 layout: post
 title: test
-date: 
+date: 2017-10-20 16:22:10 +0800
 ---
 
 this is a test
