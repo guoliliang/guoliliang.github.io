@@ -1,7 +1,30 @@
 ---
-layout: C#
+layout: post
 title: 关于 WOW6432Node
 date: 2017-10-20 16:28:11 +0800
 ---
 
-首先 WOW6432Node 是注册表
+#### 注册表介绍 
+注册表是windows系统特有的一个系统自带的 _二进制_ **数据库**，可以用来配置系统服务的参数、内置应用的参数、各种个人偏好设置，还有数量巨大的组策略选项、COM组件注册信息等。  
+
+与其相对应得unix系统也有注册表之类，但它每个软件单独一个配置，类似于wondow下的.ini
+
+| 平台    | 聚散性    | format |  安全性 |软件可迁移性
+| -       | -        |--      |- |-
+| windows | 统一（方便管理）|二进制（读写速度快\|占用资源小\|修改麻烦）|随意修改可能系统崩溃|低
+| unix    | 分散 （方便软件迁移）|序列化（读写速度慢\|占用资源大\|便于修改）|只影响单个软件|高
+具体请看[基维百科](https://zh.wikipedia.org/wiki/%E6%B3%A8%E5%86%8C%E8%A1%A8)
+
+#### 关于 WoW64
+>WoW64（Windows 32-bit on Windows 64-bit）是Microsoft Windows操作系统的一个子系统，它提供在所有Windows 64位系统上运行32位应用程序的能力,WoW64旨在解决32位与64位Windows中的许多差异，特别是涉及到Windows本身的结构变化。
+
+>64位与32位应用程序会使用不同的键。举例来说，HKEY_LOCAL_MACHINE\Software\Wow6432Node 是 HKEY_LOCAL_MACHINE\Software 的32位环境版本，并且32位应用程序不会感觉到这种重定向
+
+简而言之，Windows系统为了向前兼容32为程序而精心设计的。
+#### 关于 WOW6432Node 
+由于32为程序运行时，有可能需要读取注册表，而在32位系统和64位系统下路径却又不一样。
+
+|操作系统|64位程序访问的注册表|32位程序访问的注册表
+|------|-|-
+| 64位系统|HKEY_LOCAL_MACHINE\SOFTWARE|HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node
+|32位系统|-|HKEY_LOCAL_MACHINE\SOFTWARE
