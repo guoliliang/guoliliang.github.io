@@ -13,6 +13,7 @@ date: 2017-10-20 16:28:11 +0800
 | -       | -        |--      |- |-
 | windows | 统一（方便管理）|二进制（读写速度快\|占用资源小\|修改麻烦）|随意修改可能系统崩溃|低
 | unix    | 分散 （方便软件迁移）|序列化（读写速度慢\|占用资源大\|便于修改）|只影响单个软件|高
+
 具体请看[基维百科](https://zh.wikipedia.org/wiki/%E6%B3%A8%E5%86%8C%E8%A1%A8)
 
 #### 关于 WoW64
@@ -28,3 +29,7 @@ date: 2017-10-20 16:28:11 +0800
 |------|-|-
 | 64位系统|HKEY_LOCAL_MACHINE\SOFTWARE|HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node
 |32位系统|-|HKEY_LOCAL_MACHINE\SOFTWARE
+
+https://msdn.microsoft.com/en-us/library/windows/desktop/ms724072(v=vs.85).aspx
+
+http://windowsitpro.com/systems-management/whats-wow6432node-under-hkeylocalmachinesoftware-registry-subkey#
