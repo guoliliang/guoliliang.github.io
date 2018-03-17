@@ -30,6 +30,5 @@ date: 2017-10-20 16:28:11 +0800
 | 64位系统|HKEY_LOCAL_MACHINE\SOFTWARE|HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node
 |32位系统|-|HKEY_LOCAL_MACHINE\SOFTWARE
 
-https://msdn.microsoft.com/en-us/library/windows/desktop/ms724072(v=vs.85).aspx
-
-http://windowsitpro.com/systems-management/whats-wow6432node-under-hkeylocalmachinesoftware-registry-subkey#
+[资料](https://msdn.microsoft.com/en-us/library/windows/desktop/ms724072(v=vs.85).aspx)
+[资料](http://windowsitpro.com/systems-management/whats-wow6432node-under-hkeylocalmachinesoftware-registry-subkey#)
