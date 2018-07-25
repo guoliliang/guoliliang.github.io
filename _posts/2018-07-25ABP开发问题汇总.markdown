@@ -1,0 +1,24 @@
+---
+layout: post
+title: ABP开发问题汇总
+date: 2018-07-25 16:28:11 +0800
+---
+
+#### 同步数据库问题
+使用update-database同步到本地sql成功，然后想同步到服务器结果失败，猜想是数据库链接串的问题，于是将连接串改为 "Server=localhost; Database=ApiDb; uid=你的账号;pwd=你的密码;Trusted_Connection=True;"
+报错如下:
+> Failed to generate SSPI context.
+
+后来翻开 [stackovewflow](https://stackoverflow.com/questions/32309922/the-target-principal-name-is-incorrect-cannot-generate-sspi-context),说是 **Trusted_Connection=True;**的问题，随即把**Trusted_Connection=True;**去掉，再次运行提示：
+> 在数据库 'master' 中拒绝了 CREATE DATABASE 权限。
+
+然后把登陆账号的角色权限修改过来
+![](/img/1532513382.jpg "设置权限")
+再次运行 _update-database_ 成功了！
+
+##### 网站在非网站目录下面创建文件或者文件夹 权限问题
+需要设置文件夹的访问权限    输入：IIS APPPOOL\应用程序池名
+![alt text](/img/1529655337.png "设置文件夹的访问权限")
+这个是单个应用池权限设置
+也可以设置整个iis权限 方法同上 查找用户IIS_IUSRS，然后设置访问权限
+
